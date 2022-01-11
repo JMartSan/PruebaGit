@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var firstNumber = 0.0
@@ -110,7 +111,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             screen.text = if (result.toString().endsWith(".0")) {
                 result.toString().replace(".0", "")
             } else {
-                "%.2f".format(result)
+                "%.2f".format(Locale.US, result)
             }
         }
            }catch (e : Exception){
